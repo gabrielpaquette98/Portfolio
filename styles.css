@@ -122,3 +122,57 @@ body {
     z-index: 1;
     pointer-events: none;
 }
+
+/* Main Section for Project Pages */
+.project-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.project-item .media {
+    flex: 1;
+    max-width: 50%;
+    margin-right: 20px;
+}
+
+.project-item .media img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-item .description {
+    flex: 1;
+}
+
+.project-item .description h3 {
+    margin-top: 0;
+}
+
+.project-item .description p {
+    margin: 0;
+}
+
+.back-button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+/* Scrollable Section */
+.main-section {
+    padding: 20px;
+    overflow-y: auto;
+}
