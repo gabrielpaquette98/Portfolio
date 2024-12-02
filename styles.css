@@ -38,9 +38,14 @@ body {
     padding-left: 20px;
 }
 
-/* About Me Section */
 .about-me {
-    flex: 0 0 65%; /* Take up 65% of the top-section-content */
+    max-width: 60%; /* Adjust as needed for your layout */
+    padding-right: 20px; /* Space between content and edge */
+    padding-left: 50px;
+    box-sizing: border-box; /* Ensures padding is included in width calculations */
+    word-wrap: break-word; /* Ensures long words wrap */
+    overflow-wrap: break-word; /* Better support for modern browsers */
+    flex-grow: 1; /* Allows the section to grow to fill space */
 }
 
 .profile-photo {
