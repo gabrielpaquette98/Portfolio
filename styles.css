@@ -19,7 +19,6 @@ body {
     z-index: 1000;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
 }
 
 /* Container for Profile and About Me */
@@ -158,7 +157,7 @@ body {
 }
 
 .project-item .media {
-    flex: 1;
+    flex: 1 1;
     max-width: 50%;
     margin-right: 20px;
 }
@@ -207,3 +206,25 @@ body {
     padding: 20px;
     overflow-y: auto;
 }
+
+.animated-gif {
+    width: 440px;
+    height: auto;
+}
+
+.animated-gif-bigger {
+    width: 660px;
+    height: auto;
+}
+
+/*
+.animated-gif {
+    width: 440px !important;
+    height: auto !important;
+}
+
+.animated-gif-bigger {
+    width: 660px !important;
+    height: auto !important;
+}
+*/
