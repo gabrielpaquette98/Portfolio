@@ -10,22 +10,38 @@ body {
 /* Fixed Top Section */
 .top-section {
     display: flex;
-    /*justify-content: space-between; */
+    justify-content: center; /* Center the entire top section */
+    align-items: center; /* Vertically align items */
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensure it's on top of other content */
-    background-color: white; /* Optional: Background color to prevent transparency */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
-    padding: 10px 20px; /* Adjust padding as necessary */
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
 }
 
+/* Container for Profile and About Me */
+.top-section-content {
+    display: flex;
+    justify-content: space-between; /* Space between the profile and about me sections */
+    align-items: center;
+    max-width: 1200px; /* Set a max-width to center-align the content */
+    width: 100%; /* Ensure it takes up the available space */
+}
+
+/* Profile Section */
 .profile-section {
     display: flex;
     align-items: center;
-    max-width: 40%;
-    padding-left: 50px;
+    flex: 0 0 35%; /* Take up 35% of the top-section-content */
+    padding-left: 20px;
+}
+
+/* About Me Section */
+.about-me {
+    flex: 0 0 65%; /* Take up 65% of the top-section-content */
 }
 
 .profile-photo {
@@ -53,11 +69,13 @@ body {
     font-weight: bold;
 }
 
+/*
 .about-me {
     max-width: 50%;
     padding-right: 20px;
     padding-left: 50px;
 }
+*/
 
 .about-me h2 {
     margin-bottom: 10px;
@@ -162,6 +180,11 @@ body {
 
 .project-item .description p {
     margin: 0;
+}
+
+.back-button-container {
+    /*flex: 0 0 65%;*/
+    padding: 10px;
 }
 
 .back-button {
