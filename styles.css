@@ -161,6 +161,21 @@ body {
     border-bottom: 1px solid #ccc;
 }
 
+.project-description-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-description {
+    align-items: center;
+    max-width: 1200px;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
 .project-item .media {
     flex: 1 1;
     max-width: 50%;
@@ -183,7 +198,7 @@ body {
 }
 
 .project-item .description p {
-    margin: 0;
+    margin: 15px;
 }
 
 .back-button-container {
