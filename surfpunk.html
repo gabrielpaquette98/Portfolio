@@ -10,7 +10,7 @@
     <header class="top-section">
         <div class="top-section-content">
             <div class="profile-section">
-                <img src="ProfilePicture.jpg" alt="Photo" class="profile-photo">
+                <img src="ProfilePicture2.jpg" alt="Photo" class="profile-photo">
                 <div class="contact-info">
                     <h1>Gabriel Paquette</h1>
                     <p>Graphics Programmer</p>
@@ -28,172 +28,221 @@
         </div>
     </header>
     <main class="main-section">
-        <h1><a href="https://store.steampowered.com/app/2434830/Surfpunk/">Surfpunk</a></h1>
+        <a href="https://store.steampowered.com/app/2434830/Surfpunk/"><img class="animated-gif" src="SurfPunk/SaltwindTitle.png"></a>
+
         <div class="project-description-container">
             <p class="project-description">
-                Surfpunk is a PvE co-op extraction ARPG by <a href="https://dblstallion.com/">Double Stallion Games</a>, where players explore island-filled worlds and gather resources 
+                <a href="https://store.steampowered.com/app/2434830/Surfpunk/">Surfpunk</a> is a PvE co-op extraction ARPG by <a href="https://dblstallion.com/">Double Stallion Games</a>, where players explore island-filled worlds and gather resources 
                 as daring raiders. When I joined the project, the team was transitioning to 3D, and my primary mission was to translate the studio's 
                 distinctive 2D style into 3D while preserving the essence of a "Double Stallion game." Early in development, the game pivoted from 
                 a 2D platformer to a top-down perspective, giving me the opportunity to contribute to a variety of systems over nearly two years. 
                 My work included cel-shading for characters and environments, water effects, outlines, artist tools, and more!
             </p>
         </div>
-        <div class="project-item">
-            <div class="description">
-                <h3>Cel Shading and Decals</h3>
-                <p>
-                    My first task was creating a shader to replicate Double Stallion's signature aesthetic. This shader utilizes a gradient texture to 
-                    adjust how lighting affects shading, allowing seamless transitions from smooth to cel-shaded effects. It supports multiple features 
-                    such as specular highlights, rim lights, emissive textures, and outline options. Depending on whether the object is a character or 
-                    an environmental element, additional techniques —like triplanar texturing, silhouette shading, vertex displacement for ink effects 
-                    on enemies, and wind effects— are applied.
-                </p>
-                <p>
-                    Later, I developed a decal shader variant of the main cel shader. Using the depth buffer, it recalculates where the position 
-                    in world space is, which allows for decals. The same code is reused for some visual effects that use different shaders made 
-                    specifically for those effects. They are animated by sending the current time and the starting time of the effect to the 
-                    effect's shader.
-                </p>
-            </div>
-            <div class="media">
-                <img class="animated-gif" src="SurfPunk/CelShading.gif">
-                <img class="animated-gif" src="SurfPunk/DecalsEnviro.gif">
-                <img class="animated-gif" src="SurfPunk/DecalsVFX.gif">
+
+        <div class="project-item-container">
+            <div class="project-subitem">
+                <div class="description">
+                    <h3>Cel Shading and Decals</h3>
+                    <p>
+                        My first task was creating a shader to replicate Double Stallion's signature aesthetic. This shader utilizes a gradient texture to 
+                        adjust how lighting affects shading, allowing seamless transitions from smooth to cel-shaded effects. It supports multiple features 
+                        such as specular highlights, rim lights, emissive textures, and outline options. Depending on whether the object is a character or 
+                        an environmental element, additional techniques —like triplanar texturing, silhouette shading, vertex displacement for ink effects 
+                        on enemies, and wind effects— are applied.
+                    </p>
+                </div>
+                <div class="media">
+                    <img class="animated-gif" src="SurfPunk/CelShading.gif">
+                </div>
             </div>
         </div>
-        <div class="project-item">
-            <div class="media">
-                <video width="440px" loop="true" autoplay="autoplay" controls muted>
-                    <source src="SurfPunk/SurfaceWavesLines.mp4" type="video/mp4">
-                </video>
-                <video width="440px" loop="true" autoplay="autoplay" controls muted>
-                    <source src="SurfPunk/WaterShore.mp4" type="video/mp4">
-                </video>
-                <img class="animated-gif" src="SurfPunk/AutomaticFoam.gif">
-                <img class="animated-gif" src="SurfPunk/WaveRiding.gif">
-                <img class="animated-gif" src="SurfPunk/OilTidalWave.gif">
-            </div>
-            <div class="description">
-                <h3>Water, Foam and Waves</h3>
-                <p>
-                    Water was a significant focus during my time on Surfpunk. I implemented many things, such as caustics, refraction, and 
-                    depth-based recoloring of submerged objects. I was allowed a lot of liberty on how it looks!
-                </p>
-                <p>
-                    For the low-amplitude <b>waves</b> (seen in the first video), a big focus was put on making them readable and predictable. 
-                    All the connected players needed to have the same waves, and these waves needed to be visually impactful while minimally 
-                    affecting player movement.
-                </p>
-                <p>
-                    Tackling <b>intersection foam</b> presented an interesting challenge. A popular way to do this is to use the depth buffer: 
-                    recolor the objects that are under the water, and make them into foam if they are close to the surface. A problem with this 
-                    approach is that it can only place foam on top of objects. If you were to look at a building from the side, the foam wouldn't 
-                    extrude as expected. To fix this, I came up with a few solutions, most important of which was to bake an intersection texture 
-                    to identify where the objects intersect with the water, and add to that texture the distance from the intersection. The result 
-                    is exaggerated on the gif that shows the paddles of the ship, I got to generate those automatically from the model given by 
-                    our environment artist.
-                </p>
-                <p>
-                    For the <b>tsunami wave</b> appearing at the level's conclusion, I created a designer-friendly system based on a modifiable curve. 
-                    This curve drives gameplay mechanics and vertex displacement of a plane, augmented by a secondary foam model. The wave's shading 
-                    adheres to the water's overall principles.
-                </p>
+        <div class="project-item-container">
+            <div class="project-item">
+                <div class="description">
+                    <p>
+                        Later, I developed a decal shader variant of the main cel shader. Using the depth buffer, it recalculates where the position 
+                        in world space is, which allows for decals. The same code is reused for some visual effects that use different shaders made 
+                        specifically for those effects. They are animated by sending the current time and the starting time of the effect to the 
+                        effect's shader.
+                    </p>
+                </div>
+                <div class="media">
+                    <img class="animated-gif" src="SurfPunk/DecalsEnviro.gif">
+                    <img class="animated-gif" src="SurfPunk/DecalsVFX.gif">
+                </div>
             </div>
         </div>
-        <div class="project-item">
-            <div class="description">
-                <h3>Procedural Generation</h3>
-                <p>
-                    When given the chance to select my own tasks for a sprint, I prototyped a system for procedural island generation. Designed as an 
-                    editor tool, this system generates island terrain by generating first a grid of triangles and squares to deform tiles, producing varied islands 
-                    from minimal input. Inspired by <a href="https://x.com/osksta?lang=en">Oskar Stålberg</a>'s work, this approach offers a starting 
-                    point for designers to iterate and expand on, instead of his focus on producing a complete result at runtime. 
-                </p>
-            </div>
-            <div class="media">
-                <img class="animated-gif" src="SurfPunk/IslandGeneration.gif" alt="GIF showcasing foam effect">
-                <img class="animated-gif" src="SurfPunk/IslandTileSwapping.gif" alt="GIF showcasing Tidal Wave riding">
-            </div>
-        </div>
-        <div class="project-item">
-            <div class="media">
-                <img class="animated-gif-bigger" src="SurfPunk/OutlinesIsland-big.gif" alt="GIF showcasing foam effect">
-                <video width="660px" loop="true" autoplay="autoplay" controls muted>
-                    <source src="SurfPunk/OutlinesGameplay.mp4" type="video/mp4">
-                </video>
-                <img class="animated-gif-bigger" src="SurfPunk/SelectionOutline.png" alt="GIF showcasing foam effect">
-            </div>
-            <div class="description">
-                <h3>Outlines and Selection Outline</h3>
-                <p>
-                    Outlines, another early challenge, required a blend of techniques to achieve consistent results. The primary method involved rendering 
-                    object IDs to a buffer for post-processing. Differences in this buffer generated outline pixels, with optional depth and normal-based 
-                    enhancements in specific scenarios. This ID-based technique gave the most reliable results and became the foundation for the project's outlines.
-                </p>
+
+        <div class="project-item-container">
+            <div class="project-subitem">
+                <div class="media">
+                    <video width="440px" loop="true" autoplay="autoplay" controls muted>
+                        <source src="SurfPunk/SurfaceWavesLines.mp4" type="video/mp4">
+                    </video>
+                    <video width="440px" loop="true" autoplay="autoplay" controls muted>
+                        <source src="SurfPunk/WaterShore.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="description">
+                    <h3>Water, Foam and Waves</h3>
+                    <p>
+                        Water was a significant focus during my time on Surfpunk. I implemented many things, such as caustics, refraction, and 
+                        depth-based recoloring of submerged objects. I was allowed a lot of liberty on how it looks!
+                    </p>
+                    <p>
+                        For the low-amplitude waves (seen in the first video), a big focus was put on making them readable and predictable even at low amplitudes. 
+                        All the connected players needed to have the same waves, and these waves needed to be visually impactful while minimally 
+                        affecting player movement.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="project-item">
-            <div class="description">
-                <h3>Texture Painting and Texture Blending</h3>
-                <p>
-                    To streamline texture painting on environment objects, I developed a tool allowing artists to paint directly in-engine, enabling 
-                    real-time feedback with level props like grass and trees that would be tedious to set up in the artist's modeling software. The 
-                    tool detects the cursor's location on objects and applies RGBA channel-based texture painting, and the resulting texture is sent 
-                    to the shader where the textures are blended accordingly.
-                </p>
-            </div>
-            <div class="media">
-                <img class="animated-gif-bigger" src="SurfPunk/TexturePainting.gif" alt="GIF showcasing foam effect">
-            </div>
-        </div>
-        <div class="project-item">
-            <div class="media">
-                <img class="animated-gif-bigger" src="SurfPunk/InverseKinematicsWalk.gif" alt="GIF showcasing foam effect">
-            </div>
-            <div class="description">
-                <h3>Inverse Kinematics and Legs Management</h3>
-                <p>
-                    For animating the enemies walk cycle, I used Unity's Animation Rigging Package to create a procedural system for enemy foot placement. 
-                    This solution calculates foot positions dynamically, allowing enemies to decide when to step. It integrates with the packages' IK 
-                    solver to ensure smooth animations while reducing animator workload. In this example, the animator only needed to animate parts of 
-                    the model and let the root and the feet still. The feet and the body are then moved by my code, and it uses the distance from the 
-                    animation poses to determine when to take steps.
-                </p>
+        <div class="project-item-container">
+            <div class="project-subitem">
+                <div class="media">
+                    <img class="animated-gif" src="SurfPunk/AutomaticFoam.gif">
+                </div>
+                <div class="description">
+                    <p>
+                        Tackling intersection foam presented an interesting challenge. A popular way to do this is to use the depth buffer: 
+                        recolor the objects that are under the water, and make them into foam if they are close to the surface. A problem with this 
+                        approach is that it can only place foam on top of objects. If you were to look at a building from the side, the foam wouldn't 
+                        extrude as expected. To fix this, I came up with a few solutions, most important of which was to bake an intersection texture 
+                        to identify where the objects intersect with the water, and add to that texture the distance from the intersection. The result 
+                        is exaggerated on the gif that shows the paddles of the ship, I got to generate those automatically from the model given by 
+                        our environment artist.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="project-item">
-            <div class="description">
-                <h3>And many, many more!</h3>
-                <p>
-                    Of these other contributions, I am most proud of the Sumi oil shader shown in the first three gifs. I got full liberty on how it should look, 
-                    and came up with this result by using noise to sample noise. We needed something that the player would immediately identify to the enemies of the game, 
-                    which are based on oil and ink. 
-                </p>
-                <p>
-                    There's also atmospheric effects, which changes colors based on the depth of the camera's view allowing for fog, weather presets that 
-                    changes the feel of a specific run of the game, tests for code to make clouds and the skybox, blending the grass and environment objects, 
-                    volumetric lights, and also wind by moving vertices. 
-                </p>
-            </div>
-            <div class="media">
-                <img class="animated-gif-bigger" src="SurfPunk/OilPatches.gif">
-                <img class="animated-gif" src="SurfPunk/OilPatchEscape.gif">
-                <img class="animated-gif" src="SurfPunk/OilPatchWave.gif">
-                <img class="animated-gif" src="SurfPunk/AtmosphericFog2D.gif">
-                <img class="animated-gif" src="SurfPunk/AtmosphericFog3D.png">
-                <img class="animated-gif-bigger" src="SurfPunk/WeatherPresets.gif">
-                <img class="animated-gif" src="SurfPunk/Clouds (2).gif">
-                <img class="animated-gif" src="SurfPunk/Clouds (3).gif">
-                <img class="animated-gif" src="SurfPunk/CloudySunset.gif">
-                <img class="animated-gif" src="SurfPunk/StylizedClouds.gif">
-                <img class="animated-gif" src="SurfPunk/FillEffect.gif">
-                <img class="animated-gif" src="SurfPunk/PixelDepthHeight.gif">
-                <img class="animated-gif" src="SurfPunk/PixelDepthOffset.png">
-                <img class="animated-gif" src="SurfPunk/Silhouette.png">
-                <img class="animated-gif" src="SurfPunk/VolumetricLights.gif">
-                <img class="animated-gif" src="SurfPunk/Wind.gif">
+        <div class="project-item-container">
+            <div class="project-item">
+                <div class="media">
+                    <img class="animated-gif" src="SurfPunk/WaveRiding.gif">
+                    <img class="animated-gif" src="SurfPunk/OilTidalWave.gif">
+                </div>
+                <div class="description">
+                    <p>
+                        For the tsunami wave appearing at the level's conclusion, I created a designer-friendly system based on a modifiable curve. 
+                        This curve drives gameplay mechanics and vertex displacement of a plane, augmented by a secondary foam model. The wave's shading 
+                        adheres to the water's overall principles.
+                    </p>
+                </div>
             </div>
         </div>
+
+        <div class="project-item-container">
+            <div class="project-item">
+                <div class="description">
+                    <h3>Procedural Generation</h3>
+                    <p>
+                        When given the chance to select my own tasks for a sprint, I prototyped a system for procedural island generation. Designed as an 
+                        editor tool, this system generates island terrain by generating first a grid of triangles and squares to deform tiles, producing 
+                        varied islands from minimal input. Inspired by <a href="https://x.com/osksta?lang=en">Oskar Stålberg</a>'s work with Wave Function 
+                        Collapse, this approach offers a starting point for designers to iterate and expand on, instead of his focus on producing a complete 
+                        result at runtime. 
+                    </p>
+                </div>
+                <div class="media">
+                    <img class="animated-gif" src="SurfPunk/IslandGeneration.gif" alt="GIF showcasing foam effect">
+                    <img class="animated-gif" src="SurfPunk/IslandTileSwapping.gif" alt="GIF showcasing Tidal Wave riding">
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item-container">
+            <div class="project-item">
+                <div class="media">
+                    <img class="animated-gif-bigger" src="SurfPunk/OutlinesIsland-big.gif" alt="GIF showcasing foam effect">
+                    <video width="660px" loop="true" autoplay="autoplay" controls muted>
+                        <source src="SurfPunk/OutlinesGameplay.mp4" type="video/mp4">
+                    </video>
+                    <img class="animated-gif-bigger" src="SurfPunk/SelectionOutline.png" alt="GIF showcasing foam effect">
+                </div>
+                <div class="description">
+                    <h3>Outlines and Selection Outline</h3>
+                    <p>
+                        Outlines, another early challenge, required a blend of techniques to achieve consistent results. The primary method involved rendering 
+                        object IDs to a buffer for post-processing. Differences in this buffer generated outline pixels, with optional depth and normal-based 
+                        enhancements in specific scenarios. This ID-based technique gave the most reliable results and became the foundation for the project's outlines.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item-container">
+            <div class="project-item">
+                <div class="description">
+                    <h3>Texture Painting and Texture Blending</h3>
+                    <p>
+                        To streamline texture painting on environment objects, I developed a tool allowing artists to paint directly in-engine, enabling 
+                        real-time feedback with level props like grass and trees that would be tedious to set up in the artist's modeling software. The 
+                        tool detects the cursor's location on objects and applies RGBA channel-based texture painting, and the resulting texture is sent 
+                        to the shader where the textures are blended accordingly.
+                    </p>
+                </div>
+                <div class="media">
+                    <img class="animated-gif-bigger" src="SurfPunk/TexturePainting.gif" alt="GIF showcasing foam effect">
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item-container">
+            <div class="project-item">
+                <div class="media">
+                    <img class="animated-gif-bigger" src="SurfPunk/InverseKinematicsWalk.gif" alt="GIF showcasing foam effect">
+                </div>
+                <div class="description">
+                    <h3>Inverse Kinematics and Legs Management</h3>
+                    <p>
+                        For animating the enemies walk cycle, I used Unity's Animation Rigging Package to create a procedural system for enemy foot placement. 
+                        This solution calculates foot positions dynamically, allowing enemies to decide when to step. It integrates with the packages' IK 
+                        solver to ensure smooth animations while reducing animator workload. In this example, the animator only needed to animate parts of 
+                        the model and let the root and the feet still. The feet and the body are then moved by my code, and it uses the distance from the 
+                        animation poses to determine when to take steps.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item-container">
+            <div class="project-item">
+                <div class="description">
+                    <h3>And many, many more!</h3>
+                    <p>
+                        Of these other contributions, I am most proud of the Sumi oil shader shown in the first three gifs. I got full liberty on how it should look, 
+                        and came up with this result by using noise to sample noise. We needed something that the player would immediately identify to the enemies of the game, 
+                        which are based on oil and ink. 
+                    </p>
+                    <p>
+                        There's also atmospheric effects, which changes colors based on the depth of the camera's view allowing for fog, weather presets that 
+                        changes the feel of a specific run of the game, tests for code to make clouds and the skybox, blending the grass and environment objects, 
+                        volumetric lights, and also wind by moving vertices. 
+                    </p>
+                </div>
+                <div class="media">
+                    <img class="animated-gif-bigger" src="SurfPunk/OilPatches.gif">
+                    <img class="animated-gif" src="SurfPunk/OilPatchEscape.gif">
+                    <img class="animated-gif" src="SurfPunk/OilPatchWave.gif">
+                    <img class="animated-gif" src="SurfPunk/AtmosphericFog2D.gif">
+                    <img class="animated-gif" src="SurfPunk/AtmosphericFog3D.png">
+                    <img class="animated-gif-bigger" src="SurfPunk/WeatherPresets.gif">
+                    <img class="animated-gif" src="SurfPunk/Clouds (2).gif">
+                    <img class="animated-gif" src="SurfPunk/Clouds (3).gif">
+                    <img class="animated-gif" src="SurfPunk/CloudySunset.gif">
+                    <img class="animated-gif" src="SurfPunk/StylizedClouds.gif">
+                    <img class="animated-gif" src="SurfPunk/FillEffect.gif">
+                    <img class="animated-gif" src="SurfPunk/PixelDepthHeight.gif">
+                    <img class="animated-gif" src="SurfPunk/PixelDepthOffset.png">
+                    <img class="animated-gif" src="SurfPunk/Silhouette.png">
+                    <img class="animated-gif" src="SurfPunk/VolumetricLights.gif">
+                    <img class="animated-gif" src="SurfPunk/Wind.gif">
+                </div>
+            </div>
+        </div>
+
+        <a href="https://store.steampowered.com/app/2434830/Surfpunk/"><img class="footlogo" src="SurfPunk/SaltwindLogo.png"></a>
     </main>
 </body>
 </html>

@@ -49,10 +49,10 @@ body {
 }
 
 .profile-photo {
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 25px;
     border: 3px solid #4b4b4b;
 }
 
@@ -159,6 +159,21 @@ body {
     margin-bottom: 20px;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+    max-width: 1200px;
+}
+
+.project-subitem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 10px;
+    max-width: 1200px;
+}
+
+.project-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-description-container {
@@ -201,6 +216,31 @@ body {
     margin: 15px;
 }
 
+.project-subitem .media {
+    flex: 1 1;
+    max-width: 50%;
+    margin-right: 20px;
+}
+
+.project-subitem .media img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-subitem .description {
+    flex: 1;
+}
+
+.project-subitem .description h3 {
+    margin-top: 0;
+}
+
+.project-subitem .description p {
+    margin: 15px;
+}
+
 .back-button-container {
     /*flex: 0 0 65%;*/
     padding: 10px;
@@ -237,14 +277,12 @@ body {
     height: auto;
 }
 
-/*
-.animated-gif {
-    width: 440px !important;
-    height: auto !important;
+.footlogo {
+    width: 5%;
+    height: auto;
 }
 
-.animated-gif-bigger {
-    width: 660px !important;
-    height: auto !important;
+.buttonlogo {
+    width: 90%;
+    height: auto;
 }
-*/
