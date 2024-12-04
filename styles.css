@@ -32,6 +32,8 @@ body {
     align-items: center;
     flex: 0 0 35%;
     padding-left: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .about-me {
@@ -42,6 +44,7 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     flex-grow: 1;
+    margin: 0%;
 }
 
 .about-me-mobile {
@@ -67,13 +70,21 @@ body {
     border: 3px solid #4b4b4b;
 }
 
+@media (max-aspect-ratio: 6/7) {
+    .profile-photo {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+    }
+}
+
 .contact-info h1 {
     margin: 0;
     font-size: 20px;
 }
 
 .contact-info p {
-    margin: 5px 0;
+    margin: 0px 0;
 }
 
 .social-buttons a {
@@ -85,7 +96,8 @@ body {
 }
 
 .about-me h2 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .about-me p {
@@ -297,6 +309,12 @@ body {
     background-color: #0056b3;
 }
 
+@media (max-aspect-ratio: 6/7) {
+    .back-button {
+        display: none;
+    }
+}
+
 .main-section {
     padding: 20px;
     overflow-y: auto;
@@ -304,6 +322,7 @@ body {
 
 .animated-gif {
     width: 440px;
+    max-width: 100%;
     height: auto;
 }
 
@@ -319,6 +338,12 @@ body {
 
 .buttonlogo {
     width: 90%;
+    height: auto;
+}
+
+.toplogo {
+    width: 440px;
+    max-width: 100%;
     height: auto;
 }
 
