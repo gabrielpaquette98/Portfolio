@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -7,11 +6,10 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Fixed Top Section */
 .top-section {
     display: flex;
-    justify-content: center; /* Center the entire top section */
-    align-items: center; /* Vertically align items */
+    justify-content: center;
+    align-items: center;
     position: sticky;
     top: 0;
     left: 0;
@@ -21,31 +19,44 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Container for Profile and About Me */
 .top-section-content {
     display: flex;
-    justify-content: space-between; /* Space between the profile and about me sections */
+    justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Set a max-width to center-align the content */
-    width: 100%; /* Ensure it takes up the available space */
+    max-width: 1200px;
+    width: 100%;
 }
 
-/* Profile Section */
 .profile-section {
     display: flex;
     align-items: center;
-    flex: 0 0 35%; /* Take up 35% of the top-section-content */
+    flex: 0 0 35%;
     padding-left: 20px;
 }
 
 .about-me {
-    max-width: 60%; /* Adjust as needed for your layout */
-    padding-right: 20px; /* Space between content and edge */
+    max-width: 60%;
+    padding-right: 20px;
     padding-left: 50px;
-    box-sizing: border-box; /* Ensures padding is included in width calculations */
-    word-wrap: break-word; /* Ensures long words wrap */
-    overflow-wrap: break-word; /* Better support for modern browsers */
-    flex-grow: 1; /* Allows the section to grow to fill space */
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex-grow: 1;
+}
+
+.about-me-mobile {
+    display: none;
+}
+
+@media (max-aspect-ratio: 6/7) {
+    .about-me {
+        display: none;
+    }
+
+    .about-me-mobile {
+        display: block;
+        margin: 20px 0;
+    }
 }
 
 .profile-photo {
@@ -73,14 +84,6 @@ body {
     font-weight: bold;
 }
 
-/*
-.about-me {
-    max-width: 50%;
-    padding-right: 20px;
-    padding-left: 50px;
-}
-*/
-
 .about-me h2 {
     margin-bottom: 10px;
 }
@@ -107,7 +110,6 @@ body {
     padding: 20px;
 }
 
-/* Button Styles */
 .project-button {
     width: 300px;
     height: 300px;
@@ -147,12 +149,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Adds a slight overlay for better text readability */
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
     pointer-events: none;
 }
 
-/* Main Section for Project Pages */
 .project-item {
     display: flex;
     align-items: flex-start;
@@ -217,7 +218,7 @@ body {
 }
 
 .project-subitem .media {
-    flex: 1 1;
+    flex: 1;
     max-width: 50%;
     margin-right: 20px;
 }
@@ -241,8 +242,43 @@ body {
     margin: 15px;
 }
 
+@media (max-aspect-ratio: 6/7) {
+    .project-item {
+        flex-direction: column; /* Stack elements vertically on mobile */
+        align-items: center; /* Center align for better mobile aesthetics */
+    }
+    
+    .project-subitem {
+        flex-direction: column; /* Stack elements vertically on mobile */
+        align-items: center; /* Center align for better mobile aesthetics */
+    }
+
+    .project-item .media {
+        max-width: none; /* Full width for media */
+        margin-right: 0; /* Remove margin */
+        margin-bottom: 10px; /* Add spacing between media and description */
+        order: 2;
+    }
+
+    .project-item .description {
+        text-align: center; /* Center-align text for better readability */
+        order: 1;
+    }
+
+    .project-subitem .media {
+        max-width: none; /* Full width for media */
+        margin-right: 0; /* Remove margin */
+        margin-bottom: 10px; /* Add spacing between media and description */
+        order: 2;
+    }
+
+    .project-subitem .description {
+        text-align: center; /* Center-align text for better readability */
+        order: 1;
+    }
+}
+
 .back-button-container {
-    /*flex: 0 0 65%;*/
     padding: 10px;
 }
 
@@ -261,7 +297,6 @@ body {
     background-color: #0056b3;
 }
 
-/* Scrollable Section */
 .main-section {
     padding: 20px;
     overflow-y: auto;
@@ -284,5 +319,11 @@ body {
 
 .buttonlogo {
     width: 90%;
+    height: auto;
+}
+
+.video {
+    width: 100%;
+    max-width: none;
     height: auto;
 }
